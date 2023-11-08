@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Category.findByPk(req.params.id, {
-    include: Product, // Include associated products
+    include: Product, 
   })
     .then(category => res.json(category))
     .catch(err => res.status(500).json(err));
